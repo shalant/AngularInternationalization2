@@ -40,6 +40,9 @@
             "scripts": []
           },
           "configurations": {
+            "ru": {
+              "localize": ["ru"]
+            },
             "production": {
               "budgets": [
                 {
@@ -69,6 +72,9 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
+            "ru":{
+              "browserTarget": "it18n-playground:build:development,ru"
+            },
             "production": {
               "browserTarget": "playground:build:production"
             },
@@ -81,7 +87,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "playground:build"
+            "browserTarget": "playground:build",
+            "format": "xlf",
+            "outputPath": "src/locale"
           }
         },
         "test": {
